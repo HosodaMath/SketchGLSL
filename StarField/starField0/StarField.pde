@@ -7,7 +7,8 @@ class StarField {
     this.starShader = starShader;
     
     SetStarField setStarField = new SetStarField(30, this.canvas.width * 0.1);
-    this.starData = setStarField.setSpiral();
+    //this.starData = setStarField.setSpiral1();
+    this.starData = setStarField.setSpiral2();
   }
 
   // public void update() {};

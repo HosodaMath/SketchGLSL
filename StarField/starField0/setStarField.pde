@@ -41,7 +41,7 @@ class SetStarField {
     return this.starData;
   }
 
-  public ArrayList<StarData> setSpiral(){
+  public ArrayList<StarData> setSpiral1(){
     float a = 6;
     float radius = width * 0.025;
     float vertexNum = 5;
@@ -50,6 +50,24 @@ class SetStarField {
       float r = a * (theta / this.starMax);
       float positionX = r * cos(theta) * this.fieldScale;
       float positionY = r * sin(theta) * this.fieldScale;
+      float positionZ = 0;
+      PVector position = new PVector(positionX, positionY, positionZ);
+    
+      this.starData.add(new StarData(position, radius, vertexNum, split));
+    }
+
+    return this.starData;
+  }
+
+  public ArrayList<StarData> setSpiral2(){
+    float a = 6;
+    float radius = width * 0.025;
+    float vertexNum = 5;
+    float split = 256;
+    for (int theta = 0; theta < this.starMax; theta++) {
+      float r = a * (theta / this.starMax);
+      float positionX = r * cos(r) * this.fieldScale;
+      float positionY = r * sin(r) * this.fieldScale;
       float positionZ = 0;
       PVector position = new PVector(positionX, positionY, positionZ);
     
